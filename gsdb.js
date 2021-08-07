@@ -1,16 +1,12 @@
+
 function init() {
-    Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9WiNrGjA-Uem8QQ5aRmV1Ea7HAYzfMsBDpPorTLDnP0ZccnYvYLM6b4pdEO-gc902-K4KsgqY19XY/pub?output=csv', {
-        download: true,
-        header: true,
-        complete: function(results) {
-            var data = results.data
-            console.log(data)
-        }
-    })
-}
+  Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/10oZNROHZCMIqLiNhrMR-oS7W7NGVID8OtpXShc1OYxQ/edit?usp=sharing',
+                    callback: function(data, tabletop) { 
+                      console.log(data)
+                    },
+                    simpleSheet: true } )
 
-
-function showInfo(data, Papa) {
+function showInfo(data, tabletop) {
   console.log(data);
 
   for (var i = 0; i < data.length; i++) {
